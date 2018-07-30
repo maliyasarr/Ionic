@@ -5,6 +5,14 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
+import { SatisPage } from '../pages/satis/satis';
+import { TahsilatPage } from '../pages/tahsilat/tahsilat';
+import { MasrafPage } from '../pages/masraf/masraf';
+import { MusteriPage } from '../pages/musteri/musteri';
+import { PersonelPage } from '../pages/personel/personel';
+import { UrunPage } from '../pages/urun/urun';
+//import { RaporPage } from '../pages/rapor/rapor';
+
 
 @Component({
   templateUrl: 'app.html'
@@ -21,8 +29,15 @@ export class MyApp {
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Home', component: HomePage },
-      { title: 'List', component: ListPage }
+      { title: 'Ana Sayfa', component: HomePage },
+      { title: 'Satış/Alış', component: ListPage },
+      /* { title: 'Satış/Alış', component: SatisPage }, */
+      { title: 'Tahsilat/Ödeme', component: TahsilatPage },
+      { title: 'Masraf', component: MasrafPage },
+      { title: 'Müşteri', component: MusteriPage},
+      { title: 'Personel', component: PersonelPage},
+      { title: 'Ürün/Hizmet', component: UrunPage}
+      //{ title: 'Rapor Merkezi', component: RaporPage}
     ];
 
   }

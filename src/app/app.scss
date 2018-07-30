@@ -14,3 +14,29 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+.title-container{
+    background-color:#0077B5;
+}
+
+.no-scroll .scroll-content{
+    overflow: hidden;
+}
+
+.list-container{
+    margin-top: 15%;
+    background-color:#0077B5;
+}
+
+.sidebar-button-container {
+    background-color:#0077B5;
+    color: #dddddd;
+    margin-bottom: 3%;
+  }
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+}
