@@ -11,8 +11,9 @@ import { MasrafPage } from '../pages/masraf/masraf';
 import { MusteriPage } from '../pages/musteri/musteri';
 import { PersonelPage } from '../pages/personel/personel';
 import { UrunPage } from '../pages/urun/urun';
-//import { RaporPage } from '../pages/rapor/rapor';
+import { LoginPage } from '../pages/login/login';
 
+import { timer } from 'rxjs/observable/timer';
 
 @Component({
   templateUrl: 'app.html'
@@ -20,24 +21,24 @@ import { UrunPage } from '../pages/urun/urun';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = HomePage;
+  rootPage: any = LoginPage;
 
   pages: Array<{title: string, component: any}>;
+  
+  showSplash = true;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
+  constructor(public platform: Platform, public statusBar: StatusBar, private splashScreen: SplashScreen) {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Ana Sayfa', component: HomePage },
       { title: 'Satış/Alış', component: ListPage },
-      /* { title: 'Satış/Alış', component: SatisPage }, */
       { title: 'Tahsilat/Ödeme', component: TahsilatPage },
       { title: 'Masraf', component: MasrafPage },
       { title: 'Müşteri', component: MusteriPage},
       { title: 'Personel', component: PersonelPage},
       { title: 'Ürün/Hizmet', component: UrunPage}
-      //{ title: 'Rapor Merkezi', component: RaporPage}
     ];
 
   }
@@ -48,6 +49,8 @@ export class MyApp {
       // Here you can do any higher level native things you might need.
       this.statusBar.styleDefault();
       this.splashScreen.hide();
+
+      timer(3000).subscribe(() => this.showSplash = false)
     });
   }
 
